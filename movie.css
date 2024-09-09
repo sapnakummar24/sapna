@@ -1,0 +1,122 @@
+*{
+    /* Removes any default space around elements */
+    margin: 0;  
+    /* Removes default space inside elements.  */
+    padding: 0;
+    /* This ensures that the padding and border are included in the element’s total width and height, making layout easier to manage. */
+    box-sizing: border-box;
+}
+
+body{
+   /*  viewport height, so the body always covers the full screen. */
+    min-height: 100vh;
+}
+
+h1{
+    /* Centers the text horizontally. */
+    text-align: center;
+    color: white;
+    /* Adds space above the heading. 1rem equals the size of the root element's font (often 16px). */
+    margin-top: 1rem;
+    /* The full form of rem in CSS is Root Element Measurement or Root Em. */
+}
+
+form{
+    /*  Centers the text in the form. */
+    text-align: center;
+    /* Adds space above the form. */
+    margin-top: 1rem;
+    display: flex;
+    /* Aligns the form elements horizontally in the center. */
+    justify-content: center;
+    /* Adds space between the form elements (like input and button). */
+    gap: 0.5rem;
+    /* Adds space below the form. */
+    margin-bottom: 30px;
+}
+
+.search-input{
+    font-size: 1.2rem;
+    /* padding: 0.2em;: Adds space inside the input. em is relative to the element’s font size. */
+    padding: 0.2em;
+    /* border-radius: 0.25rem;: Rounds the corners of the input. */
+    border-radius: 0.25rem;
+    border: none;
+    outline: none;
+    background-color: rgb(234, 234, 234);
+}
+
+/* :focus-within: This style applies when the input is focused (clicked or selected). */
+.search-input:focus-within{
+    box-shadow: 0px 0px 4px 2px rgb(238, 170, 67);
+}
+
+button{
+    font-size: 1rem;
+    /* padding: 0.25em 0.75em;: Adds padding inside the button (0.25 on top/bottom, 0.75 on left/right). */
+    padding: 0.25em 0.75em;
+    background-color:rgb(7, 134, 134);
+    color: white;
+    border: none;
+    font-weight: bold;
+    /* border-radius: 0.25em;: Rounds the corners of the button. */
+    border-radius: 0.25em;
+    box-shadow: 1px 1px 2px 2px #636161;
+}
+
+button:hover{
+    /* :hover: This applies when the user moves the mouse over the button. */
+    cursor: pointer;
+    background-color: rgba(6, 118, 118, 0.85);
+}
+
+button:active{
+    /* :active: This applies when the button is clicked. */
+    transform: translate(2px,2px);
+    box-shadow: 1px 1px 2px 1px #636161;
+}
+
+img{
+    display: block;
+    min-width: 100%;
+    box-shadow: 0 0 5px rgb(93, 93, 93);
+    transition: 0.3s linear;
+    cursor: pointer;
+    /* overflow: hidden;: Ensures the image does not overflow its container. */
+    overflow: hidden;
+}
+
+img:hover{
+    transform: scale(1.05);
+}
+
+.image-container{
+    display: grid;
+    place-content: center;
+    /* Automatically adjusts the number of columns based on available space, with each column being at least 220px wide. */
+    grid-template-columns: repeat(auto-fit,minmax(220px,0.4fr));
+    gap: 10%;
+    padding: 10px;
+    width: 90%;
+    margin: 20% auto;
+
+}
+
+@media (max-width:580px)
+    {
+    img{
+    height: 350px;
+    }
+    .image-container{
+    grid-template-columns: repeat(auto-fit,minmax(250px,300px));
+    }
+}
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
